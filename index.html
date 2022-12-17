@@ -201,7 +201,7 @@
                 aria-label="Close"
               ></button>
             </div>
-            <form action="#" class="contact-form">
+            <form action="#" onsubmit="sendEmail()">
               <div class="mb-3">
                 <label for="name" class="form-label">Nama Lengkap</label>
                 <input
@@ -329,16 +329,16 @@
 
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
-      const name = document.getElementById("name");
-      const email = document.getElementById("email");
-      const pesan = document.getElementById("pesan");
+      // const name = document.getElementById("name");
+      // const email = document.getElementById("email");
+      // const pesan = document.getElementById("pesan");
 
-      const submit = document.getElementsByClassName("contact-form")[0];
+      // const submit = document.getElementsByClassName("contact-form")[0];
 
-      submit.addEventListener("submit", (e) => {
-        e.preventDefault();
-        console.log("Clicked");
-      });
+      // submit.addEventListener("submit", (e) => {
+      //   e.preventDefault();
+      //   console.log("Clicked");
+      // });
 
       // let ebody = `
       //   <b>Nama : </b>${name.value}
