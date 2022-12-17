@@ -201,7 +201,7 @@
                 aria-label="Close"
               ></button>
             </div>
-            <form id="contact-form">
+            <form action="#" class="contact-form">
               <div class="mb-3">
                 <label for="name" class="form-label">Nama Lengkap</label>
                 <input
@@ -329,26 +329,32 @@
 
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
+      const name = document.getElementById("name");
+      const email = document.getElementById("email");
+      const pesan = document.getElementById("pesan");
 
-      const form = document.querySelector("#contact-form");
+      const submit = document.getElementsByClassName("contact-form")[0];
 
-      function sendMsg(e){
+      submit.addEventListener("submit", (e) => {
         e.preventDefault();
-        const name = document.querySelector("#name"),
-              email = document.querySelector("#email"),
-              pesan = document.querySelector("#pesan"),
+        console.log("Clicked");
+      });
 
+      let ebody = `
+        <b>Nama : </b>${name.value}
+        <br>
+        <b>Email : </b>${email.value}
+        <br>
+        <b>Pesan :</b>${pesan.value}
+      `;
 
-          Email.send({
-            SecureToken: "7b1bb436-2642-4dc5-83b7-5a574852fdee",
-            To: "baru0802akun@gmail.com",
-            From: email.value,
-            Subject: "This is the subject",
-            Body: pesan.value,
-        }).then((message) => alert(message));
-      }
-
-      form.addEventListener('submit', sendMsg)
+      Email.send({
+        SecureToken: "eccdf458-d501-47b8-b146-3f891d1b0457",
+        To: "baru0802akun@gmail.com",
+        From: "baru0802akun@gmail.com",
+        Subject: "Testing email from " + email.value,
+        Body: ebody,
+      }).then((message) => alert(message));
     </script>
   </body>
 </html>
