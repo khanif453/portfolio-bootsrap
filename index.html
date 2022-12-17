@@ -340,21 +340,37 @@
         console.log("Clicked");
       });
 
-      let ebody = `
-        <b>Nama : </b>${name.value}
-        <br>
-        <b>Email : </b>${email.value}
-        <br>
-        <b>Pesan :</b>${pesan.value}
-      `;
+      // let ebody = `
+      //   <b>Nama : </b>${name.value}
+      //   <br>
+      //   <b>Email : </b>${email.value}
+      //   <br>
+      //   <b>Pesan :</b>${pesan.value}
+      // `;
 
-      Email.send({
-        SecureToken: "eccdf458-d501-47b8-b146-3f891d1b0457",
-        To: "baru0802akun@gmail.com",
-        From: "baru0802akun@gmail.com",
-        Subject: "Testing email from " + email.value,
-        Body: ebody,
-      }).then((message) => alert(message));
+      // Email.send({
+      //   SecureToken: "eccdf458-d501-47b8-b146-3f891d1b0457",
+      //   To: "baru0802akun@gmail.com",
+      //   From: "baru0802akun@gmail.com",
+      //   Subject: "Testing email from " + email.value,
+      //   Body: ebody,
+      // }).then((message) => alert(message));
+
+      function sendEmail() {
+        Email.send({
+          SecureToken: "eccdf458-d501-47b8-b146-3f891d1b0457",
+          To: "baru0802akun@gmail.com",
+          From: "baru0802akun@gmail.com",
+          Subject: "Testing email from ",
+          Body:
+            "Name :" +
+            document.getElementById("name").value +
+            "Email :" +
+            document.getElementById("email").value +
+            "Pesan :" +
+            document.getElementById("pesan").value,
+        }).then((message) => alert(message));
+      }
     </script>
   </body>
 </html>
