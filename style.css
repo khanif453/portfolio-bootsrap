@@ -1,0 +1,31 @@
+.jumbotron {
+  padding-top: 6rem;
+  background-color: #33343b;
+  color: white;
+}
+
+.nvbr{
+  background-color: #2e64b6;
+}
+
+section {
+  padding-top: 5rem;
+}
+.about {
+  background-color: #2d2e34;
+  color: white;
+}
+
+.project{
+  background-color: #24252a;
+  color: white;
+}
+
+.boximg{
+  color: black;
+}
+
+.contact{
+  background-color: #2d2e34;
+  color: white;
+}
